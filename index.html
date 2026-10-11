@@ -4,17 +4,1210 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LUMÉA BEAUTY — Soins Botaniques & Éclat Naturel</title>
-    <meta name="description" content="Découvrez LUMÉA BEAUTY : des soins cosmétiques et soins du visage raffinés, formulés en France avec des actifs botaniques purs pour révéler l’éclat naturel de votre peau." />
+    <meta
+      name="description"
+      content="Découvrez LUMÉA BEAUTY : des soins cosmétiques et soins du visage raffinés, formulés en France avec des actifs botaniques purs pour révéler l’éclat naturel de votre peau."
+    />
     <meta property="og:title" content="LUMÉA BEAUTY — Soins Botaniques & Éclat Naturel" />
-    <meta property="og:description" content="Des formules douces et luxueuses créées pour sublimer votre peau au quotidien. Livraison offerte dès 49 €." />
+    <meta
+      property="og:description"
+      content="Des formules douces et luxueuses créées pour sublimer votre peau au quotidien. Livraison offerte dès 49 €."
+    />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body class="bg-[#FAF8F5] text-[#1A1816] antialiased selection:bg-[#E8DCCF] selection:text-[#1A1816]">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- 1. ANNOUNCEMENT BAR -->
+    <aside class="announcement-bar" role="region" aria-label="Annonce promotionnelle">
+      <span>✨ Livraison offerte dès 49 € d’achat</span> · Formules botaniques créées & conditionnées en France
+    </aside>
+
+    <!-- 2. SITE HEADER -->
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <!-- Logo -->
+        <a href="#home" class="brand-logo" aria-label="LUMÉA BEAUTY — Retour à l'accueil" onclick="Router.navigate('home')">
+          <span class="brand-name">LUMÉA BEAUTY</span>
+          <span class="brand-sub">Haute Botanique · France</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="primary-nav" aria-label="Navigation principale">
+          <ul class="nav-list">
+            <li><button type="button" class="nav-link is-active" data-route="home" onclick="Router.navigate('home')">Accueil</button></li>
+            <li><button type="button" class="nav-link" data-route="shop" onclick="Router.navigate('shop')">Boutique</button></li>
+            <li><button type="button" class="nav-link" data-route="serums" onclick="Router.navigate('serums')">Sérums</button></li>
+            <li><button type="button" class="nav-link" data-route="moisturizers" onclick="Router.navigate('moisturizers')">Hydratants</button></li>
+            <li><button type="button" class="nav-link" data-route="cleansers" onclick="Router.navigate('cleansers')">Nettoyants</button></li>
+            <li><button type="button" class="nav-link" data-route="masks" onclick="Router.navigate('masks')">Masques</button></li>
+            <li><button type="button" class="nav-link" data-route="body" onclick="Router.navigate('body')">Corps & Bien-être</button></li>
+            <li><button type="button" class="nav-link" data-route="about" onclick="Router.navigate('about')">Notre Histoire</button></li>
+            <li><button type="button" class="nav-link" data-route="contact" onclick="Router.navigate('contact')">Contact</button></li>
+          </ul>
+        </nav>
+
+        <!-- Header Actions: Search, Account, Cart, Mobile Toggle -->
+        <div class="header-actions">
+          <!-- Search trigger -->
+          <button type="button" class="action-btn js-open-search" aria-label="Ouvrir la recherche de produits" title="Rechercher">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <!-- Account modal trigger -->
+          <button type="button" class="action-btn js-open-account" aria-label="Espace client" title="Compte client">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+
+          <!-- Cart button with live counter -->
+          <button type="button" class="cart-btn js-open-cart" aria-label="Ouvrir mon panier" title="Panier">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span>Panier</span>
+            <span class="cart-counter js-cart-count">0</span>
+          </button>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button type="button" id="mobile-menu-toggle" class="mobile-menu-toggle action-btn" aria-label="Ouvrir le menu mobile">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-nav-drawer" class="mobile-nav-drawer" hidden>
+        <ul class="mobile-nav-list">
+          <li><button type="button" class="mobile-nav-link" onclick="Router.navigate('home')">Accueil</button></li>
+          <li><button type="button" class="mobile-nav-link" onclick="Router.navigate('shop')">Toute la boutique</button></li>
+          <li><button type="button" class="mobile-nav-link" onclick="Router.navigate('serums')">Sérums Botaniques</button></li>
+          <li><button type="button" class="mobile-nav-link" onclick="Router.navigate('moisturizers')">Crèmes Hydratantes</button></li>
+          <li><button type="button" class="mobile-nav-link" onclick="Router.navigate('cleansers')">Nettoyants & Lotions</button></li>
+          <li><button type="button" class="mobile-nav-link" onclick="Router.navigate('masks')">Masques & Rituels</button></li>
+          <li><button type="button" class="mobile-nav-link" onclick="Router.navigate('body')">Corps & Bien-être</button></li>
+          <li><button type="button" class="mobile-nav-link" onclick="Router.navigate('about')">Notre Histoire</button></li>
+          <li><button type="button" class="mobile-nav-link" onclick="Router.navigate('faq')">Foire Aux Questions</button></li>
+          <li><button type="button" class="mobile-nav-link" onclick="Router.navigate('contact')">Contact & Atelier</button></li>
+        </ul>
+        <div style="display: flex; gap: 0.75rem;">
+          <button type="button" class="btn btn-secondary btn-sm btn-full js-open-search">Rechercher un soin</button>
+          <button type="button" class="btn btn-primary btn-sm btn-full js-open-cart">Voir mon panier</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER WITH INTERACTIVE ROUTER VIEWS -->
+    <main id="main-content">
+      <!-- =====================================================================
+           VIEW 1: HOMEPAGE (#view-home)
+           ===================================================================== -->
+      <section id="view-home" class="view-section">
+        <!-- Hero Section -->
+        <div class="hero-section">
+          <div class="container hero-grid">
+            <div class="hero-content">
+              <span class="hero-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Haute Cosmétique Botanique · France
+              </span>
+              <h1 class="hero-title">Révélez l’éclat naturel de votre peau.</h1>
+              <p class="hero-subtitle">
+                Des formulations douces, pures et sensorielles aux actifs botaniques précieux pour magnifier chaque jour votre routine de soin sans superflu.
+              </p>
+              <div class="hero-actions">
+                <button type="button" class="btn btn-primary" onclick="Router.navigate('shop')">
+                  Découvrir la collection
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+                <a href="#home-bestsellers" class="btn btn-secondary">Nos best-sellers</a>
+              </div>
+              <div class="hero-trust-strip">
+                <div>🌿 Actifs <strong>100% clean & purs</strong></div>
+                <div>✨ Formulé & fabriqué <strong>en France</strong></div>
+                <div>📦 Livraison offerte <strong>dès 49 €</strong></div>
+              </div>
+            </div>
+
+            <div class="hero-visual">
+              <div class="hero-visual-card">
+                <img src="/src/assets/images/lumea_hero_editorial_1791728662064.jpg" alt="LUMÉA BEAUTY — Soin visage d’exception" />
+                <div class="hero-visual-caption">
+                  <span>Nouvelle Édition</span>
+                  <p>Le Rituel Éclat & Sérénité Botanique</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Benefits Pillars -->
+        <div class="benefits-section">
+          <div class="container benefits-grid">
+            <div class="benefit-item">
+              <div class="benefit-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V17a1 1 0 0 1-2 0v-.07A7 7 0 0 1 5.07 11H5a1 1 0 0 1 0-2h.07A7 7 0 0 1 11 3.07V3a1 1 0 0 1 2 0v.07A7 7 0 0 1 18.93 9H19a1 1 0 0 1 0 2h-.07A7 7 0 0 1 13 16.93z"></path></svg>
+              </div>
+              <div>
+                <h3 class="benefit-title">Ingrédients Purs</h3>
+                <p class="benefit-desc">Sélection rigoureuse d’extraits botaniques français et d’huiles végétales de première pression à froid.</p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div>
+                <h3 class="benefit-title">Formules Douces</h3>
+                <p class="benefit-desc">Testées sous contrôle dermatologique, garanties sans sulfates, parabènes, silicones ni perturbateurs.</p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+              </div>
+              <div>
+                <h3 class="benefit-title">Routine Simplifiée</h3>
+                <p class="benefit-desc">3 à 4 étapes essentielles hautement concentrées pour un résultat visible sans surcharge cutanée.</p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              </div>
+              <div>
+                <h3 class="benefit-title">Paiement & Suivi Sûr</h3>
+                <p class="benefit-desc">Expédition rapide sous 24h avec suivi Colissimo et retours faciles sous 14 jours.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Best-Selling Products Section -->
+        <div id="home-bestsellers" class="products-section">
+          <div class="container">
+            <div class="section-head-split">
+              <div>
+                <span class="section-kicker">Les Incontournables</span>
+                <h2 class="section-title">Nos Meilleurs Soins</h2>
+                <p class="section-description">
+                  Les formules plébiscitées par notre communauté pour restaurer l'hydratation, illuminer le teint et nourrir la barrière cutanée.
+                </p>
+              </div>
+            </div>
+
+            <!-- Dynamically populated by HomeUI.renderBestSellers() -->
+            <div id="home-bestsellers-grid" class="products-grid"></div>
+
+            <div style="text-align: center; margin-top: 3.5rem;">
+              <button type="button" class="btn btn-secondary" onclick="Router.navigate('shop')">
+                Explorer tous nos soins (12 créations)
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop by Category Section -->
+        <div class="category-section">
+          <div class="container">
+            <div class="section-head-split" style="text-align: center; margin-inline: auto;">
+              <span class="section-kicker">Parcours Sensoriel</span>
+              <h2 class="section-title">Explorer par Univers</h2>
+              <p class="section-description">Trouvez le soin ciblé adapté à chaque étape de votre rituel quotidien.</p>
+            </div>
+
+            <div class="category-grid">
+              <div class="category-card" onclick="Router.navigate('cleansers')">
+                <img src="/src/assets/images/lumea_lotion_tonique_1791729582628.jpg" alt="Nettoyants et toniques" />
+                <div class="category-overlay"></div>
+                <div class="category-content">
+                  <span class="category-kicker">Étape 1 · Pureté</span>
+                  <h3 class="category-title">Nettoyants</h3>
+                  <div class="category-subtitle">
+                    <span>Huiles et mousses douces</span>
+                    <span>→</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="category-card" onclick="Router.navigate('serums')">
+                <img src="/src/assets/images/lumea_serum_vitamine_c_1791728674227.jpg" alt="Sérums botaniques" />
+                <div class="category-overlay"></div>
+                <div class="category-content">
+                  <span class="category-kicker">Étape 2 · Puissance</span>
+                  <h3 class="category-title">Sérums</h3>
+                  <div class="category-subtitle">
+                    <span>Actifs concentrés & éclat</span>
+                    <span>→</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="category-card" onclick="Router.navigate('moisturizers')">
+                <img src="/src/assets/images/lumea_creme_nuage_1791728686618.jpg" alt="Hydratants et crèmes" />
+                <div class="category-overlay"></div>
+                <div class="category-content">
+                  <span class="category-kicker">Étape 3 · Confort</span>
+                  <h3 class="category-title">Hydratants</h3>
+                  <div class="category-subtitle">
+                    <span>Textures fondantes & barrière</span>
+                    <span>→</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="category-card" onclick="Router.navigate('masks')">
+                <img src="/src/assets/images/lumea_masque_argile_1791729562588.jpg" alt="Masques et soins" />
+                <div class="category-overlay"></div>
+                <div class="category-content">
+                  <span class="category-kicker">Rituel Hebdomadaire</span>
+                  <h3 class="category-title">Masques & Soins</h3>
+                  <div class="category-subtitle">
+                    <span>Argile rose et gommages</span>
+                    <span>→</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bundle Promotional Banner -->
+        <div class="bundle-banner">
+          <div class="container bundle-grid">
+            <div class="bundle-content">
+              <span class="section-kicker" style="color: var(--color-rose-dust);">Coffret Signature en Édition Limitée</span>
+              <h2 class="bundle-title">Le Rituel Complet Éclat Divin</h2>
+              <p class="bundle-desc">
+                Rehaussez votre éclat avec notre trio iconique : le Sérum Éclat Vitamine C, la Crème Hydratante Nuage et l’Huile Nettoyante Pureté, présentés dans un coffret raffiné avec une mousseline de coton biologique offerte.
+              </p>
+              <div class="bundle-prices">
+                <span class="bundle-price-current">69,00 €</span>
+                <span class="bundle-price-old">79,70 €</span>
+                <span class="bundle-savings">Économisez 10,70 € · Livraison Offerte</span>
+              </div>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button type="button" class="btn btn-white" onclick="CartStore.addItem('coffret-rituel-complet', 1)">
+                  Ajouter le coffret au panier
+                </button>
+                <button type="button" class="btn btn-secondary" style="border-color: var(--color-white); color: var(--color-white);" onclick="Router.navigate('pdp', 'coffret-rituel-complet')">
+                  Voir les détails
+                </button>
+              </div>
+            </div>
+
+            <div class="bundle-visual">
+              <div class="bundle-visual-frame">
+                <img src="/src/assets/images/lumea_coffret_rituel_1791728702187.jpg" alt="Coffret Rituel Complet LUMÉA BEAUTY" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand Story Editorial Section -->
+        <div style="padding-block: 5.5rem; background: var(--color-white); border-block: 1px solid var(--color-border);">
+          <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3.5rem; align-items: center;">
+            <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-subtle);">
+              <img src="/src/assets/images/lumea_brand_story_1791728712197.jpg" alt="Laboratoire artisanal LUMÉA BEAUTY" />
+            </div>
+            <div>
+              <span class="section-kicker">Notre Philosophie</span>
+              <h2 class="section-title">La beauté, tout simplement.</h2>
+              <p style="font-size: 0.875rem; color: var(--color-muted); line-height: 1.8; margin-bottom: 1.25rem;">
+                Fondée en France avec la conviction qu’une peau resplendissante n’exige pas une superposition de dizaines de couches de produits de synthèse, <strong>LUMÉA BEAUTY</strong> remet la simplicité et la vérité botanique au cœur de chaque geste.
+              </p>
+              <p style="font-size: 0.875rem; color: var(--color-muted); line-height: 1.8; margin-bottom: 2rem;">
+                Chacun de nos élixirs est imaginé comme un hommage à la nature : des textures soyeuses, des parfums subtils 100 % naturels et des concentrations d’actifs rigoureusement dosées pour honorer votre épiderme.
+              </p>
+              <button type="button" class="btn btn-secondary" onclick="Router.navigate('about')">
+                Lire notre manifeste complet
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verified Demo Reviews Section -->
+        <div class="reviews-section">
+          <div class="container">
+            <div class="section-head-split" style="text-align: center; margin-inline: auto;">
+              <span class="section-kicker">Retours d’Expérience Démo</span>
+              <h2 class="section-title">Ce que notre communauté partage</h2>
+              <p class="section-description">Avis fictifs représentatifs des bienfaits de nos formulations botaniques.</p>
+            </div>
+
+            <div class="reviews-grid">
+              <div class="review-card">
+                <div>
+                  <div style="color: var(--color-gold); margin-bottom: 0.75rem;">★★★★★</div>
+                  <p class="review-quote">« Le Sérum Vitamine C a transformé mon teint terne après 10 jours seulement. La texture est divine et ne colle absolument pas. Un vrai coup de cœur ! »</p>
+                </div>
+                <div class="review-author-row">
+                  <span class="review-author-name">Camille L. · Lyon</span>
+                  <span class="review-product-tag">Sérum Vitamine C</span>
+                </div>
+              </div>
+
+              <div class="review-card">
+                <div>
+                  <div style="color: var(--color-gold); margin-bottom: 0.75rem;">★★★★★</div>
+                  <p class="review-quote">« La Crème Nuage porte bien son nom : ultra-légère mais profondément nourrissante. Ma peau sensible ne tiraille plus du tout en fin de journée. »</p>
+                </div>
+                <div class="review-author-row">
+                  <span class="review-author-name">Thomas V. · Paris</span>
+                  <span class="review-product-tag">Crème Nuage</span>
+                </div>
+              </div>
+
+              <div class="review-card">
+                <div>
+                  <div style="color: var(--color-gold); margin-bottom: 0.75rem;">★★★★★</div>
+                  <p class="review-quote">« L’Huile Sublime est un enchantement pour le corps après la douche. Le parfum est subtil, le flacon magnifique dans la salle de bain. »</p>
+                </div>
+                <div class="review-author-row">
+                  <span class="review-author-name">Éléonore M. · Bordeaux</span>
+                  <span class="review-product-tag">Huile Sèche Sublime</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="newsletter-section">
+          <div class="container newsletter-box">
+            <span class="section-kicker">Le Cercle Privilège LUMÉA</span>
+            <h2 class="section-title">10% offerts sur votre premier rituel</h2>
+            <p class="section-description">
+              Inscrivez-vous pour recevoir nos rituels saisonniers, conseils dermatologiques et un code exclusif immédiat.
+            </p>
+            <form id="home-newsletter-form" class="newsletter-form">
+              <input type="email" class="input-rounded" placeholder="Entrez votre adresse e-mail" required />
+              <button type="submit" class="btn btn-primary">S’inscrire</button>
+            </form>
+            <div id="home-newsletter-success" class="alert-success" hidden>
+              ✨ Merci ! Bienvenue dans le Cercle LUMÉA. Utilisez le code promo <strong>BIENVENUE10</strong> lors de votre commande.
+            </div>
+          </div>
+        </div>
+
+        <!-- Instagram Community Gallery -->
+        <div class="insta-section">
+          <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem;">
+              <div>
+                <span class="section-kicker">Inspirations Visuelles</span>
+                <h3 class="font-serif" style="font-size: 1.75rem;">@lumeabeauty_officiel</h3>
+              </div>
+              <span style="font-size: 0.75rem; color: var(--color-muted); font-weight: 500;">Rejoignez la communauté</span>
+            </div>
+
+            <div class="insta-grid">
+              <div class="insta-card">
+                <img src="/src/assets/images/lumea_serum_vitamine_c_1791728674227.jpg" alt="Inspiration Sérum" />
+              </div>
+              <div class="insta-card">
+                <img src="/src/assets/images/lumea_creme_nuage_1791728686618.jpg" alt="Inspiration Crème" />
+              </div>
+              <div class="insta-card">
+                <img src="/src/assets/images/lumea_masque_argile_1791729562588.jpg" alt="Inspiration Masque" />
+              </div>
+              <div class="insta-card">
+                <img src="/src/assets/images/lumea_huile_corps_1791729572516.jpg" alt="Inspiration Huile de soin" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           VIEW 2: SHOP CATALOG WITH ADVANCED MULTI-FILTERS (#view-catalog)
+           ===================================================================== -->
+      <section id="view-catalog" class="view-section" hidden>
+        <div class="container catalog-page-wrap">
+          <div style="margin-bottom: 2.5rem;">
+            <span id="catalog-view-kicker" class="section-kicker">Haute Cosmétique Française</span>
+            <h1 id="catalog-view-title" class="section-title">Toutes nos créations botaniques</h1>
+            <p class="section-description" style="margin-inline: 0;">
+              Parcourez nos 12 formules éco-conçues, triées selon vos exigences de soin et votre typologie de peau.
+            </p>
+          </div>
+
+          <!-- Multi-filter bar & Sorters -->
+          <div class="filter-bar-box">
+            <!-- Top row: Category Pills + Sorter select -->
+            <div class="filter-row-top">
+              <div class="category-filter-pills" role="tablist" aria-label="Filtrer par catégorie">
+                <button type="button" class="filter-pill js-cat-filter is-active" data-category="Tous">Tous</button>
+                <button type="button" class="filter-pill js-cat-filter" data-category="Nettoyants">Nettoyants</button>
+                <button type="button" class="filter-pill js-cat-filter" data-category="Sérums">Sérums</button>
+                <button type="button" class="filter-pill js-cat-filter" data-category="Hydratants">Hydratants</button>
+                <button type="button" class="filter-pill js-cat-filter" data-category="Masques & soins">Masques & soins</button>
+                <button type="button" class="filter-pill js-cat-filter" data-category="Corps & bien-être">Corps & bien-être</button>
+              </div>
+
+              <div class="sorter-select-wrap">
+                <label for="catalog-sorter">Trier par :</label>
+                <select id="catalog-sorter" class="custom-select">
+                  <option value="popularity">Popularité & avis</option>
+                  <option value="price-asc">Prix croissant (€ → €€€)</option>
+                  <option value="price-desc">Prix décroissant (€€€ → €)</option>
+                  <option value="newest">Dernières créations</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Secondary row: Price Chips + Availability checkbox + Clear button -->
+            <div class="filter-row-secondary">
+              <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                <div class="price-chips">
+                  <span style="font-size: 0.75rem; color: var(--color-muted); align-self: center; margin-right: 0.25rem;">Prix :</span>
+                  <button type="button" class="chip-btn js-price-chip is-active" data-price="all">Tous</button>
+                  <button type="button" class="chip-btn js-price-chip" data-price="under20">&lt; 20 €</button>
+                  <button type="button" class="chip-btn js-price-chip" data-price="20to30">20 € à 30 €</button>
+                  <button type="button" class="chip-btn js-price-chip" data-price="over30">&gt; 30 €</button>
+                </div>
+
+                <label style="display: inline-flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+                  <input type="checkbox" id="filter-stock-only" />
+                  <span>En stock uniquement</span>
+                </label>
+              </div>
+
+              <div>
+                <button type="button" id="btn-clear-filters" class="chip-btn" style="color: var(--color-charcoal); font-weight: 600;">
+                  ✕ Réinitialiser les filtres
+                </button>
+              </div>
+            </div>
+
+            <!-- Active Filter Chips display -->
+            <div id="catalog-active-chips" class="active-filter-chips" hidden></div>
+          </div>
+
+          <!-- Product results header -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <span id="catalog-result-count" style="font-size: 0.8125rem; font-weight: 600; color: var(--color-muted);">12 soins</span>
+          </div>
+
+          <!-- Product grid populated dynamically by CatalogUI.render() -->
+          <div id="catalog-products-grid" class="products-grid"></div>
+
+          <!-- Empty filter state -->
+          <div id="catalog-empty-box" class="empty-state-box" hidden>
+            <div class="empty-state-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <h3 class="font-serif" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Aucun soin ne correspond à ces critères</h3>
+            <p style="font-size: 0.8125rem; color: var(--color-muted); margin-bottom: 1.5rem;">
+              Essayez de relâcher un filtre de prix ou de catégorie pour découvrir l’ensemble du catalogue.
+            </p>
+            <button type="button" class="btn btn-secondary" onclick="CatalogUI.clearAll()">
+              Réinitialiser tous les filtres
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           VIEW 3: INDIVIDUAL PRODUCT DETAIL PAGE (#view-pdp)
+           ===================================================================== -->
+      <section id="view-pdp" class="view-section" hidden>
+        <div class="container pdp-wrap">
+          <!-- Breadcrumb navigation -->
+          <nav class="breadcrumb-nav" aria-label="Fil d'Ariane">
+            <a href="#home" onclick="Router.navigate('home')">Accueil</a>
+            <span>/</span>
+            <a href="#shop" onclick="Router.navigate('shop')">Boutique</a>
+            <span>/</span>
+            <span id="pdp-bc-cat">Sérums</span>
+            <span>/</span>
+            <strong id="pdp-bc-title">Sérum Éclat Vitamine C</strong>
+          </nav>
+
+          <!-- PDP 2-Column Showcase -->
+          <div class="pdp-grid">
+            <!-- Left: Gallery & Thumbnails -->
+            <div class="pdp-gallery-column">
+              <div class="pdp-gallery-card">
+                <img id="pdp-main-image" src="" alt="Photographie du soin" />
+              </div>
+              <div id="pdp-thumbs-container" class="pdp-thumbs-row"></div>
+            </div>
+
+            <!-- Right: Purchasing card & descriptions -->
+            <div class="pdp-purchase-box">
+              <span id="pdp-category-vol" class="section-kicker">Sérums · 30 ml</span>
+              <h1 id="pdp-title" class="pdp-title">Nom du Soin</h1>
+              <p id="pdp-subtitle" class="pdp-subtitle">Sous-titre et formule</p>
+
+              <!-- Rating strip -->
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                <span style="color: var(--color-gold);">★★★★★</span>
+                <span id="pdp-rating-val" style="font-family: monospace; font-weight: 700; font-size: 0.875rem;">4.9</span>
+                <span id="pdp-review-count" style="font-size: 0.75rem; color: var(--color-muted-light);">(142 avis démo)</span>
+              </div>
+
+              <!-- Price row -->
+              <div class="pdp-price-row">
+                <div style="display: flex; align-items: baseline; gap: 0.75rem;">
+                  <span id="pdp-price" style="font-family: monospace; font-size: 1.75rem; font-weight: 700;">29,90 €</span>
+                  <span id="pdp-old-price" style="font-family: monospace; font-size: 1.1rem; color: var(--color-muted-light); text-decoration: line-through;" hidden>34,90 €</span>
+                </div>
+                <span style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-sage-deep); font-weight: 600;">TVA incluse</span>
+              </div>
+
+              <!-- Stock indicator -->
+              <div id="pdp-stock-status" style="font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem;">
+                <span style="color: #10B981;">●</span> En stock · Expédié sous 24h
+              </div>
+
+              <!-- Short description -->
+              <p id="pdp-desc" style="font-size: 0.875rem; color: var(--color-muted); line-height: 1.7; margin-bottom: 1.5rem;"></p>
+
+              <!-- Stepper and Add to Cart -->
+              <div class="pdp-stepper-wrap">
+                <div class="stepper-box">
+                  <button type="button" class="stepper-btn" onclick="PdpUI.changeQty(-1)" aria-label="Diminuer la quantité">-</button>
+                  <span id="pdp-qty-val" class="stepper-val">1</span>
+                  <button type="button" class="stepper-btn" onclick="PdpUI.changeQty(1)" aria-label="Augmenter la quantité">+</button>
+                </div>
+                <button type="button" id="pdp-add-btn" class="btn btn-primary" style="flex: 1;" onclick="PdpUI.addToCart()">
+                  Ajouter au panier · 29,90 €
+                </button>
+              </div>
+
+              <!-- Reassurance guarantees -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; padding-top: 1.25rem; border-top: 1px solid var(--color-border); font-size: 0.6875rem; text-align: center; color: var(--color-muted);">
+                <div>📦 Offert dès 49 €</div>
+                <div>🌿 100% Végétal</div>
+                <div>🔄 Retours 14j</div>
+              </div>
+
+              <!-- Tabs: Bénéfices / Ingrédients INCI / Conseils -->
+              <div class="pdp-tabs-nav" role="tablist">
+                <button type="button" class="pdp-tab-trigger is-active" data-tab="benefits" onclick="PdpUI.switchTab('benefits')">Bénéfices</button>
+                <button type="button" class="pdp-tab-trigger" data-tab="ingredients" onclick="PdpUI.switchTab('ingredients')">Ingrédients (INCI)</button>
+                <button type="button" class="pdp-tab-trigger" data-tab="usage" onclick="PdpUI.switchTab('usage')">Application</button>
+              </div>
+
+              <div id="pdp-tab-benefits" class="pdp-tab-content"></div>
+              <div id="pdp-tab-ingredients" class="pdp-tab-content" hidden></div>
+              <div id="pdp-tab-usage" class="pdp-tab-content" hidden></div>
+            </div>
+          </div>
+
+          <!-- Related Products Section -->
+          <div style="border-top: 1px solid var(--color-border); padding-top: 3.5rem;">
+            <div style="margin-bottom: 2rem;">
+              <span class="section-kicker">Protocole Complémentaire</span>
+              <h2 class="section-title">À associer avec ce soin</h2>
+            </div>
+            <div id="pdp-related-grid" class="products-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           VIEW 4: DEDICATED CART PAGE (#view-cart-page)
+           ===================================================================== -->
+      <section id="view-cart-page" class="view-section" hidden>
+        <div class="container cart-page-wrap">
+          <div style="margin-bottom: 2rem;">
+            <span class="section-kicker">Votre Sélection</span>
+            <h1 class="section-title">Mon Panier de Soins</h1>
+          </div>
+
+          <!-- Free Shipping Gauge -->
+          <div class="shipping-gauge-box" style="border-radius: var(--radius-md); margin-bottom: 2rem;">
+            <p id="cart-page-gauge-text">Plus que <strong>49,00 €</strong> pour la livraison offerte.</p>
+            <div class="gauge-track">
+              <div id="cart-page-gauge-fill" class="gauge-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <!-- Empty Cart State -->
+          <div id="cart-page-empty" class="empty-state-box" hidden>
+            <div class="empty-state-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path></svg>
+            </div>
+            <h3 class="font-serif" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Votre rituel est actuellement vide</h3>
+            <p style="font-size: 0.8125rem; color: var(--color-muted); margin-bottom: 1.5rem;">
+              Parcourez nos créations botaniques pour composer votre routine sur-mesure.
+            </p>
+            <button type="button" class="btn btn-primary" onclick="Router.navigate('shop')">Explorer la boutique</button>
+          </div>
+
+          <!-- Cart content grid -->
+          <div id="cart-page-grid" class="cart-page-grid">
+            <div id="cart-page-items" style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-md);"></div>
+
+            <!-- Order Summary Sidebar -->
+            <div class="order-summary-box">
+              <h3 class="font-serif" style="font-size: 1.35rem;">Récapitulatif de commande</h3>
+              <div style="display: flex; justify-content: space-between; font-size: 0.8125rem;">
+                <span style="color: var(--color-muted);">Sous-total des soins</span>
+                <span id="cart-page-subtotal" style="font-family: monospace; font-weight: 600;">0,00 €</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.8125rem;">
+                <span style="color: var(--color-muted);">Frais de livraison (Colissimo)</span>
+                <span id="cart-page-shipping" style="font-family: monospace; font-weight: 600;">4,90 €</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 700; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+                <span>Total estimé TTC</span>
+                <span id="cart-page-total" style="font-family: monospace;">0,00 €</span>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-full" style="padding: 1rem;" onclick="Router.navigate('checkout')">
+                Valider la commande
+              </button>
+              <button type="button" class="btn btn-secondary btn-full" onclick="Router.navigate('shop')">
+                Continuer mes achats
+              </button>
+
+              <div style="text-align: center; font-size: 0.6875rem; color: var(--color-muted-light); margin-top: 0.5rem;">
+                🔒 Démonstration front-end réaliste · Aucun débit réel
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           VIEW 5: CHECKOUT SIMULATION PAGE (#view-checkout)
+           ===================================================================== -->
+      <section id="view-checkout" class="view-section" hidden>
+        <div class="container checkout-page-wrap">
+          <!-- Form step -->
+          <div id="checkout-form-step">
+            <div style="margin-bottom: 2rem;">
+              <span class="section-kicker">Tunnel de Commande Démo</span>
+              <h1 class="section-title">Finalisation de votre commande</h1>
+              <p class="section-description" style="margin-inline: 0;">
+                Simulez une commande complète sans engagement. Vos coordonnées fictives généreront un reçu détaillé de validation.
+              </p>
+            </div>
+
+            <div class="checkout-grid">
+              <!-- Left: Form inputs -->
+              <form id="checkout-form" class="checkout-form-box">
+                <h3 class="font-serif" style="font-size: 1.35rem;">1. Coordonnées & Livraison</h3>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="chk-first-name">Prénom *</label>
+                    <input type="text" id="chk-first-name" class="form-input" value="Léa" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="chk-last-name">Nom *</label>
+                    <input type="text" id="chk-last-name" class="form-input" value="Martin" required />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="chk-email">Adresse e-mail (reçu de commande) *</label>
+                  <input type="email" id="chk-email" class="form-input" value="lea.martin@exemple.fr" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="chk-address">Adresse postale de livraison *</label>
+                  <input type="text" id="chk-address" class="form-input" value="14 Rue de la République" required />
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="chk-postal">Code Postal *</label>
+                    <input type="text" id="chk-postal" class="form-input" value="69002" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="chk-city">Ville *</label>
+                    <input type="text" id="chk-city" class="form-input" value="Lyon" required />
+                  </div>
+                </div>
+
+                <h3 class="font-serif" style="font-size: 1.35rem; margin-top: 1rem;">2. Mode d'expédition</h3>
+
+                <label class="shipping-option-card">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <input type="radio" name="shipping-rate" value="standard" checked />
+                    <div>
+                      <strong>Colissimo Domicile (48h)</strong>
+                      <p style="font-size: 0.6875rem; color: var(--color-muted);">Livraison neutre en carbone</p>
+                    </div>
+                  </div>
+                  <span>Offert dès 49 € (sinon 4,90 €)</span>
+                </label>
+
+                <label class="shipping-option-card">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <input type="radio" name="shipping-rate" value="express" />
+                    <div>
+                      <strong>Chronopost Express (24h)</strong>
+                      <p style="font-size: 0.6875rem; color: var(--color-muted);">Livraison garantie le lendemain avant 13h</p>
+                    </div>
+                  </div>
+                  <span>+5,00 €</span>
+                </label>
+
+                <h3 class="font-serif" style="font-size: 1.35rem; margin-top: 1rem;">3. Paiement Sécurisé (Simulation Démo)</h3>
+                <div style="background: var(--color-beige-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.75rem; color: var(--color-muted);">
+                  🌿 <strong>Environnement de Démonstration :</strong> Aucun numéro de carte bancaire n'est requis. Cliquez ci-dessous pour confirmer la commande et afficher le récapitulatif officiel.
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full" style="padding: 1rem; font-size: 0.8125rem;">
+                  Confirmer et commander · <span id="checkout-btn-total">0,00 €</span>
+                </button>
+              </form>
+
+              <!-- Right: Order recap -->
+              <div class="order-summary-box">
+                <h3 class="font-serif" style="font-size: 1.35rem;">Articles de la commande</h3>
+                <div id="checkout-items-summary" style="max-height: 18rem; overflow-y: auto;"></div>
+
+                <div style="display: flex; justify-content: space-between; font-size: 0.8125rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border);">
+                  <span style="color: var(--color-muted);">Sous-total</span>
+                  <span id="checkout-subtotal" style="font-family: monospace; font-weight: 600;">0,00 €</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8125rem;">
+                  <span style="color: var(--color-muted);">Expédition</span>
+                  <span id="checkout-shipping" style="font-family: monospace; font-weight: 600;">Offerts</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 700; padding-top: 0.75rem; border-top: 1px solid var(--color-border);">
+                  <span>Total à régler</span>
+                  <span id="checkout-total" style="font-family: monospace;">0,00 €</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Success step -->
+          <div id="checkout-success-step" class="empty-state-box" style="max-width: 36rem;" hidden>
+            <div class="empty-state-icon" style="color: #10B981; background: #ECFDF5; border-color: #A7F3D0;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="section-kicker" style="color: #10B981;">Commande Validée</span>
+            <h2 class="section-title">Merci pour votre confiance !</h2>
+            <p style="font-size: 0.875rem; color: var(--color-muted); margin-bottom: 2rem;">
+              Votre rituel LUMÉA BEAUTY est en cours de préparation avec le plus grand soin dans notre atelier de Lyon.
+            </p>
+
+            <div style="background: var(--color-ivory); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem; text-align: left; margin-bottom: 2rem; font-size: 0.8125rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span style="color: var(--color-muted);">N° de commande :</span>
+                <strong id="conf-order-num" style="font-family: monospace;">#LUM-123456</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span style="color: var(--color-muted);">Client :</span>
+                <span id="conf-name">Léa Martin</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span style="color: var(--color-muted);">Adresse :</span>
+                <span id="conf-address">14 Rue de la République, 69002 Lyon</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span style="color: var(--color-muted);">E-mail :</span>
+                <span id="conf-email">lea.martin@exemple.fr</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border); font-weight: 700;">
+                <span>Montant total simulé :</span>
+                <span id="conf-total" style="font-family: monospace;">0,00 €</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="Router.navigate('shop')">
+              Retourner à la boutique
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           VIEW 6: ABOUT PAGE (#view-about)
+           ===================================================================== -->
+      <section id="view-about" class="view-section" hidden>
+        <div class="container static-page-wrap">
+          <div style="max-width: 48rem; margin-inline: auto;">
+            <span class="section-kicker">Notre Histoire & Manifeste</span>
+            <h1 class="section-title">La Maison LUMÉA BEAUTY</h1>
+            <p class="section-description" style="margin-inline: 0; margin-bottom: 2.5rem;">
+              Entre pureté botanique et rigueur dermatologique, découvrez l’origine d’une marque née de la passion pour le soin bienveillant.
+            </p>
+
+            <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border); margin-bottom: 2.5rem; box-shadow: var(--shadow-subtle);">
+              <img src="/src/assets/images/lumea_brand_story_1791728712197.jpg" alt="Botanique et formulation LUMÉA" />
+            </div>
+
+            <article style="font-size: 0.9375rem; color: #4A453F; line-height: 1.85; display: flex; flex-direction: column; gap: 1.5rem;">
+              <h2 class="font-serif" style="font-size: 1.85rem; color: var(--color-charcoal); margin-top: 1rem;">Une démarche d’authenticité et d’épure</h2>
+              <p>
+                LUMÉA BEAUTY est née d’un constat partagé par de nombreuses amoureuses et nombreux amoureux du soin cutané : le marché cosmétique s’est complexifié au détriment de la clarté. Multiplier les produits, appliquer jusqu’à dix couches par jour, tester des compositions opaques aux promesses irréalistes... Notre volonté a été de revenir à l’essence même du soin : des ingrédients nobles, traçables et respectueux de la physiologie naturelle de la peau.
+              </p>
+              <h2 class="font-serif" style="font-size: 1.85rem; color: var(--color-charcoal); margin-top: 1rem;">Le secret de nos extractions</h2>
+              <p>
+                Nos formules sont élaborées à partir d’huiles végétales vierges pressées à froid (rosier sauvage, noisette, jojoba, argan), d’hydrolats floraux purs (rose de Damas, néroli, camomille) et d’actifs cosmétiques de référence (acide hyaluronique multi-moléculaire, vitamine C végétale, zinc PCA).
+              </p>
+              <h2 class="font-serif" style="font-size: 1.85rem; color: var(--color-charcoal); margin-top: 1rem;">L’éco-conception par principe</h2>
+              <p>
+                Chaque flacon en verre ambré ou opalin protège nos élixirs des rayons UV sans exiger d’agents conservateurs agressifs. Nos étuis proviennent de forêts gérées durablement et aucun suremballage plastique inutile n’est toléré dans nos colis.
+              </p>
+            </article>
+
+            <div style="margin-top: 3.5rem; text-align: center;">
+              <button type="button" class="btn btn-primary" onclick="Router.navigate('shop')">
+                Découvrir nos créations botaniques
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           VIEW 7: CONTACT PAGE (#view-contact)
+           ===================================================================== -->
+      <section id="view-contact" class="view-section" hidden>
+        <div class="container static-page-wrap">
+          <div style="max-width: 48rem; margin-inline: auto;">
+            <span class="section-kicker">Échange & Conseils</span>
+            <h1 class="section-title">Contacter l'Atelier LUMÉA</h1>
+            <p class="section-description" style="margin-inline: 0; margin-bottom: 2.5rem;">
+              Une question sur une formule, un conseil personnalisé de routine ou un suivi de livraison ? Notre équipe lyonnaise vous répond avec attention sous 24 heures ouvrées.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+              <div style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+                <h3 class="font-serif" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Atelier & Siège</h3>
+                <p style="font-size: 0.8125rem; color: var(--color-muted);">14 Rue de la République<br />69002 Lyon, France</p>
+              </div>
+              <div style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+                <h3 class="font-serif" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Service Client Démo</h3>
+                <p style="font-size: 0.8125rem; color: var(--color-muted);">bonjour@lumea-beauty.fr<br />Du lundi au vendredi, 9h — 18h</p>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form id="contact-form" class="checkout-form-box">
+              <h3 class="font-serif" style="font-size: 1.35rem;">Envoyez-nous un message</h3>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="cnt-name">Votre nom complet *</label>
+                  <input type="text" id="cnt-name" class="form-input" placeholder="Léa Martin" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cnt-email">Votre adresse e-mail *</label>
+                  <input type="email" id="cnt-email" class="form-input" placeholder="lea@exemple.fr" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cnt-subject">Objet de votre demande</label>
+                <select id="cnt-subject" class="custom-select" style="padding: 0.75rem;">
+                  <option value="routine">Conseil routine personnalisé</option>
+                  <option value="order">Question sur une commande démo</option>
+                  <option value="press">Presse & Partenariats</option>
+                  <option value="other">Autre demande</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cnt-message">Votre message *</label>
+                <textarea id="cnt-message" rows="5" class="form-input" placeholder="Décrivez votre besoin..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
+                Envoyer le message
+              </button>
+            </form>
+
+            <div id="contact-success" class="alert-success" hidden>
+              ✨ Merci pour votre message ! Notre équipe de démonstration vous répondra dans les plus brefs délais.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           VIEW 8: FAQ & EXPEDITION PAGE (#view-faq)
+           ===================================================================== -->
+      <section id="view-faq" class="view-section" hidden>
+        <div class="container static-page-wrap">
+          <div style="max-width: 44rem; margin-inline: auto;">
+            <span class="section-kicker">Aide & Informations</span>
+            <h1 class="section-title">Foire Aux Questions</h1>
+            <p class="section-description" style="margin-inline: 0; margin-bottom: 2.5rem;">
+              Toutes les réponses relatives à nos formulations, à la livraison offerte dès 49 € et à la politique de retour sous 14 jours.
+            </p>
+
+            <div class="faq-accordion-box">
+              <div class="faq-row">
+                <button type="button" class="faq-trigger js-faq-trigger">
+                  <span>Quels sont les délais et tarifs de livraison ?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-answer">
+                  La livraison est offerte en France métropolitaine pour toute commande atteignant <strong>49,00 €</strong>. Pour les montants inférieurs, la livraison standard Colissimo 48h s'élève à 4,90 €. Les commandes sont expédiées sous 24h ouvrées depuis notre atelier à Lyon.
+                </div>
+              </div>
+
+              <div class="faq-row">
+                <button type="button" class="faq-trigger js-faq-trigger">
+                  <span>Les soins conviennent-ils aux peaux sensibles ?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-answer" hidden>
+                  Oui. L’ensemble de notre gamme est formulé sans parfum de synthèse agressif, sans alcool dénaturé asséchant et sans huiles minérales occlusives. Nous privilégions des hydrolats doux de fleurs et des extraits apaisants de camomille et de calendula.
+                </div>
+              </div>
+
+              <div class="faq-row">
+                <button type="button" class="faq-trigger js-faq-trigger">
+                  <span>Comment fonctionnent les retours ?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-answer" hidden>
+                  Vous disposez d'un délai de 14 jours à compter de la réception de votre colis pour nous notifier un retour. Les produits doivent être intacts, non ouverts et conservés dans leur étui d’origine pour des raisons d’hygiène évidentes.
+                </div>
+              </div>
+
+              <div class="faq-row">
+                <button type="button" class="faq-trigger js-faq-trigger">
+                  <span>Dans quel ordre appliquer les soins LUMÉA ?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-answer" hidden>
+                  Nous préconisons le protocole universel : 1. Nettoyage doux (huile ou mousse), 2. Lotion tonique florale, 3. Sérum concentré (Vitamine C ou Acide Hyaluronique), 4. Crème hydratante scellante (Crème Nuage). 1 à 2 fois par semaine, complétez par le Masque Visage Éclat à l’argile rose.
+                </div>
+              </div>
+
+              <div class="faq-row">
+                <button type="button" class="faq-trigger js-faq-trigger">
+                  <span>Ce site est-il un vrai commerce en ligne ?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-answer" hidden>
+                  Non, <strong>LUMÉA BEAUTY</strong> est un concept de marque fictive développé pour une présentation de portfolio d'agence webdesign. Aucune transaction bancaire réelle n'est effectuée et aucun produit physique ne sera expédié.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           VIEW 9: DEDICATED SEARCH RESULTS PAGE (#view-search-results)
+           ===================================================================== -->
+      <section id="view-search-results" class="view-section" hidden>
+        <div class="container catalog-page-wrap">
+          <div style="margin-bottom: 2rem;">
+            <span class="section-kicker">Recherche dans la Boutique</span>
+            <h1 id="search-view-title" class="section-title">Résultats de recherche</h1>
+            <p id="search-count-text" style="font-size: 0.8125rem; font-weight: 600; color: var(--color-muted);"></p>
+          </div>
+
+          <div style="margin-bottom: 2.5rem; max-width: 32rem;">
+            <input
+              type="search"
+              id="search-view-input"
+              class="input-rounded"
+              placeholder="Rechercher par nom, catégorie, actif ou besoin..."
+              oninput="Router.navigate('search', encodeURIComponent(this.value.trim()))"
+            />
+          </div>
+
+          <div id="search-products-grid" class="products-grid"></div>
+
+          <div id="search-empty-box" class="empty-state-box" hidden>
+            <div class="empty-state-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <h3 class="font-serif" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Aucun soin trouvé</h3>
+            <p style="font-size: 0.8125rem; color: var(--color-muted); margin-bottom: 1.5rem;">
+              Vérifiez l’orthographe ou découvrez nos suggestions : Vitamine C, Hydratation, Argile rose, Corps.
+            </p>
+            <button type="button" class="btn btn-primary" onclick="Router.navigate('shop')">Voir toute la collection</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 3. FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Col 1: Brand Info -->
+          <div>
+            <span class="brand-name" style="color: var(--color-white); font-size: 1.5rem; letter-spacing: 0.15em;">LUMÉA BEAUTY</span>
+            <p style="font-size: 0.78125rem; color: var(--color-beige-sand); margin-top: 0.75rem; line-height: 1.7; max-width: 20rem;">
+              Haute cosmétique française formulée avec des actifs botaniques nobles pour sublimer chaque jour la beauté authentique de votre peau.
+            </p>
+            <div style="margin-top: 1.25rem; font-size: 0.75rem; color: var(--color-muted-light);">
+              Atelier & Laboratoire Démo · Lyon, France
+            </div>
+          </div>
+
+          <!-- Col 2: Navigation Boutique -->
+          <div>
+            <h4 class="footer-col-title">La Boutique</h4>
+            <ul class="footer-links-list">
+              <li><button type="button" onclick="Router.navigate('shop')">Toutes les créations</button></li>
+              <li><button type="button" onclick="Router.navigate('serums')">Sérums Botaniques</button></li>
+              <li><button type="button" onclick="Router.navigate('moisturizers')">Crèmes Hydratantes</button></li>
+              <li><button type="button" onclick="Router.navigate('cleansers')">Nettoyants & Lotions</button></li>
+              <li><button type="button" onclick="Router.navigate('masks')">Masques & Rituels</button></li>
+              <li><button type="button" onclick="Router.navigate('body')">Corps & Bien-être</button></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: La Maison -->
+          <div>
+            <h4 class="footer-col-title">La Maison</h4>
+            <ul class="footer-links-list">
+              <li><button type="button" onclick="Router.navigate('about')">Notre Histoire</button></li>
+              <li><button type="button" onclick="Router.navigate('about')">Engagements Botaniques</button></li>
+              <li><button type="button" onclick="Router.navigate('contact')">Nous Contacter</button></li>
+              <li><button type="button" onclick="Router.navigate('faq')">Foire Aux Questions</button></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Engagements & Aide -->
+          <div>
+            <h4 class="footer-col-title">Engagements</h4>
+            <ul class="footer-links-list">
+              <li><span>🌱 Formules 100% Vegan & Clean</span></li>
+              <li><span>🇫🇷 Conçu & Fabriqué en France</span></li>
+              <li><span>📦 Livraison offerte dès 49 €</span></li>
+              <li><span>🔄 Retours offerts sous 14 jours</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 LUMÉA BEAUTY. Tous droits réservés.</p>
+          <p style="color: var(--color-muted-light);">
+            Concept de marque fictive développé à des fins de démonstration UX/UI et portfolio. Aucun achat réel.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 4. MODALS & SLIDE-OUT DRAWERS -->
+
+    <!-- Shopping Cart Drawer Overlay -->
+    <div id="cart-drawer-overlay" class="cart-drawer-overlay" hidden>
+      <aside id="cart-drawer" class="cart-drawer-panel" role="dialog" aria-modal="true" aria-label="Panier d'achat">
+        <!-- Header -->
+        <div class="cart-drawer-header">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path></svg>
+            <h3 class="font-serif" style="font-size: 1.25rem;">Mon Rituel de Soin</h3>
+          </div>
+          <button type="button" id="close-cart-drawer" style="padding: 0.5rem; font-size: 1.25rem;" aria-label="Fermer le panier">✕</button>
+        </div>
+
+        <!-- Free shipping gauge in drawer -->
+        <div class="shipping-gauge-box">
+          <p id="drawer-gauge-text" style="font-size: 0.75rem;">Plus que <strong>49,00 €</strong> pour la livraison offerte.</p>
+          <div class="gauge-track">
+            <div id="drawer-gauge-fill" class="gauge-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Items list container -->
+        <div id="drawer-items-list" class="cart-items-scroll"></div>
+
+        <!-- Footer actions in drawer -->
+        <div id="drawer-footer" class="cart-drawer-footer">
+          <div style="display: flex; justify-content: space-between; font-size: 0.8125rem;">
+            <span style="color: var(--color-muted);">Sous-total</span>
+            <span id="drawer-subtotal" style="font-family: monospace; font-weight: 700;">0,00 €</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.8125rem;">
+            <span style="color: var(--color-muted);">Livraison estimée</span>
+            <span id="drawer-shipping" style="font-family: monospace; font-weight: 600;">Offerts</span>
+          </div>
+          <button type="button" class="btn btn-primary btn-full" onclick="CartUI.closeDrawer(); Router.navigate('checkout');">
+            Commander maintenant
+          </button>
+          <button type="button" class="btn btn-secondary btn-full btn-sm" onclick="CartUI.closeDrawer(); Router.navigate('cart');">
+            Voir le panier complet
+          </button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Live Search Modal -->
+    <div id="search-modal" class="modal-overlay" hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Recherche de soins">
+        <div style="padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between;">
+          <h3 class="font-serif" style="font-size: 1.25rem;">Rechercher un soin</h3>
+          <button type="button" id="close-search-modal" style="font-size: 1.25rem; padding: 0.25rem;" aria-label="Fermer la recherche">✕</button>
+        </div>
+        <form id="search-modal-form" style="padding: 1.5rem; border-bottom: 1px solid var(--color-beige-sand);">
+          <input
+            type="search"
+            id="search-modal-input"
+            class="input-rounded"
+            placeholder="Tapez un mot-clé (ex: Vitamine C, Nuage, Argile, Sérum...)"
+            autocomplete="off"
+          />
+        </form>
+        <div style="padding: 1rem 1.5rem; background: var(--color-beige-subtle); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted);">
+          Suggestions instantanées
+        </div>
+        <div id="search-modal-results" style="padding: 1rem 1.5rem; overflow-y: auto; max-height: 20rem;"></div>
+      </div>
+    </div>
+
+    <!-- Customer Account Modal -->
+    <div id="account-modal" class="modal-overlay" hidden>
+      <div class="modal-card" style="max-width: 28rem; padding: 2.5rem; text-align: center;" role="dialog" aria-modal="true">
+        <div class="empty-state-icon" style="margin-bottom: 1rem;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <h3 class="font-serif" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Espace Client Démo</h3>
+        <p style="font-size: 0.8125rem; color: var(--color-muted); margin-bottom: 1.75rem; line-height: 1.6;">
+          Bienvenue sur le prototype interactif <strong>LUMÉA BEAUTY</strong>. Vous naviguez actuellement sur une simulation complète avec panier persistant et commande interactive.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <button type="button" class="btn btn-primary" id="close-account-modal">Continuer mes achats</button>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('account-modal').setAttribute('hidden', ''); Router.navigate('cart');">Consulter mon panier</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Floating Toast Notification -->
+    <div id="cart-toast" class="cart-toast" hidden>
+      ✨ Produit ajouté à votre rituel !
+    </div>
+
+    <!-- Vanilla JavaScript Core Application -->
+    <script type="module" src="./script.js"></script>
   </body>
 </html>
